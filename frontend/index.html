@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusSync - Your Campus Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="hero sophisticated">
+        <div class="hero-content">
+            <h1>Grow. Connect. Collaborate.</h1>
+            <p>Unifying campus life with smart event discovery, peer connections, and growth tracking — all in one beautiful hub.</p>
+            <button onclick="scrollToSignup()">Get Started</button>
+        </div>
+        <div class="hero-bg-blur"></div>
+    </header>
+
+    <section class="image-map-section sophisticated">
+        <h2 class="section-header">Campus Navigation Map</h2>
+        <p class="section-sub">Click an area to explore events, your profile, groups, dashboard, or the noticeboard.</p>
+        <div class="wrapper sophisticated">
+            <img src="campus_image.jpeg" alt="Campus Map" class="bg-image">
+            <div class="hotspot calendar" onclick="window.location.href='events.html'"></div>
+            <div class="hotspot profile" onclick="window.location.href='profile.html'"></div>
+            <div class="hotspot group" onclick="window.location.href='groups.html'"></div>
+            <div class="hotspot computer" onclick="window.location.href='dashboard.html'"></div>
+            <div class="hotspot board" onclick="window.location.href='noticeboard.html'"></div>
+        </div>
+    </section>
+
+    <section id="features" class="section sophisticated">
+        <h2 class="section-header">Key Features</h2>
+        <div class="card-row sophisticated">
+            <div class="feature-card sophisticated">
+                <div class="card-icon">📝</div>
+                <h3>Personalized Profiles</h3>
+                <p>Create a rich profile showcasing your skills, interests, and career goals for tailored recommendations.</p>
+            </div>
+            <div class="feature-card sophisticated">
+                <div class="card-icon">🔗</div>
+                <h3>Smart Matchmaking</h3>
+                <p>Connect instantly to like-minded students for hackathons, study groups, or campus projects.</p>
+            </div>
+            <div class="feature-card sophisticated">
+                <div class="card-icon">📅</div>
+                <h3>Event Calendar</h3>
+                <p>View and RSVP to curated campus events so you never miss out on growth opportunities.</p>
+            </div>
+            <div class="feature-card sophisticated">
+                <div class="card-icon">👥</div>
+                <h3>Group Collaboration</h3>
+                <p>Form project groups, chat, and collaborate seamlessly with built-in tools.</p>
+            </div>
+            <div class="feature-card sophisticated">
+                <div class="card-icon">📈</div>
+                <h3>Growth Dashboard</h3>
+                <p>Track your participation, achievements, and learning streaks through intuitive analytics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section sophisticated alt">
+        <h2 class="section-header">Upcoming Campus Events</h2>
+        <div id="event-list" class="card-row sophisticated">
+            <!-- Events get populated here -->
+        </div>
+        <button class="action-btn sophisticated" onclick="loadEvents()">Show More Events</button>
+    </section>
+
+    <section id="groups" class="section sophisticated">
+        <h2 class="section-header">Collaboration Groups</h2>
+        <div class="card-row sophisticated">
+            <div class="group-card sophisticated">Study Circle</div>
+            <div class="group-card sophisticated">Hackathon Crew</div>
+            <div class="group-card sophisticated">Creators Collective</div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="section sophisticated alt">
+        <h2 class="section-header">Your Growth Dashboard</h2>
+        <div id="growth-summary" class="dashboard-cards sophisticated">
+            <div class="dash-card sophisticated">
+                <h4>Events Attended</h4>
+                <span id="eventsAttended">0</span>
+            </div>
+            <div class="dash-card sophisticated">
+                <h4>Groups Joined</h4>
+                <span id="groupsJoined">0</span>
+            </div>
+            <div class="dash-card sophisticated">
+                <h4>Learning Streak</h4>
+                <span id="learningStreak">0 days</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="section sophisticated">
+    <h2 class="section-header">Sign Up</h2>
+    <form id="signup-form" onsubmit="registerUser(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="College Email" required />
+        <input type="text" id="skills" placeholder="Skills (comma separated)" required />
+        <input type="text" id="interests" placeholder="Interests (comma separated)" required />
+        <textarea id="goals" placeholder="Your Learning Goals" rows="3" required></textarea>
+        <label for="availability">Preferred Collaboration Time:</label>
+        <select id="availability" required>
+        <option value="">Select Time Slot</option>
+        <option value="morning">Morning (8 AM - 12 PM)</option>
+        <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+        <option value="evening">Evening (4 PM - 8 PM)</option>
+        <option value="night">Night (8 PM - 12 AM)</option>
+        </select>
+        <button type="submit" class="action-btn sophisticated">Create Profile</button>
+    </form>
+    </section>
+
+
+    <footer class="footer sophisticated">
+        <p>CampusSync &copy; 2025. Modern campus. Maximum growth.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
